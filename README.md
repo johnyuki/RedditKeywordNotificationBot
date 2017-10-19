@@ -7,11 +7,13 @@
 
 - After it is completed, open your command prompt and type in "pip install praw", and let it do its thing. Once it is installed you can close the command prompt. 
 
+- Download this program by clicking on the green "Clone or Download" button, followed by "Download ZIP". After it downloads, extract the "Reddit Notification Bot.py" file anywhere you like. 
+
 - Open your start menu and type "IDLE", and open the program that is called "IDLE (Python 3.6 32-bit)". It might also be 64-bit instead of 32-bit. 
 
-- When the window opens, go to *File > New File*. Paste the code from the pastebin in there.
+- When the window opens, go to *File > Open* and select the file that you just extracted.
 
-- To create a bot account, create a new Reddit account like you normally would. After it is created, go to *preferences > apps > create new app*. Make sure you select "script". Call the bot whatever you like, and in the "redirect uri" box, enter "http://localhost:8080". Then click create.
+- Next, to create a bot account on Reddit, create a new Reddit account like you normally would. After it is created, go to *preferences > apps > create new app*. Make sure you select "script". Call the bot whatever you like, and in the "redirect uri" box, enter "http://localhost:8080". Then click create.
 
 - Go back to IDLE and follow the instructions that I commented. (Everything with a hash symbol. The text should be red.)
 
