@@ -8,6 +8,7 @@ KEYWORDS = ['keyword1', 'keyword2', 'keyphrases also work', 'etc...']
 
 # You can have 1 subreddit or multiple. If you have multiple, separate them with + symbols like I have done in the example.
 # Also, you do not need to include the "/r/" part, just the name of the subreddit as shown in the example.
+# The subreddit can also just be "all" if you want it to search through every subreddit in existence. (Might get spammy if you have a common or a lot of keywords).
 SUBREDDITS = 'gifs+pics+videos+etc...'
 
 # Enter your username. You do not need to include the "/u/" part, just the username like in the example
