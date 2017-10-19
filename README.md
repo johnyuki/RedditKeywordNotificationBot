@@ -1,5 +1,5 @@
 # Setup instructions
-*Instructions are for Windows. I've never done this on any other OS so I cannot help, sorry.
+*Instructions are for Windows. I've never done this on any other OS so I cannot help, sorry.*
 
 - Download Python 3.6 from the Python website here - https://www.python.org/downloads/
 
