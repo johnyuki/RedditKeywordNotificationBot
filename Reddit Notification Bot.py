@@ -16,7 +16,7 @@ USERNAME = 'your_username'
 # The subject of the message that the bot sends you.
 MESSAGE_SUBJECT = 'Found new post'
 
-#The body of the message that the bot sends you.
+#The body of the message that the bot sends you. #The bot will automatically attach the link to the post at the end of the message body.
 MESSAGE_BODY = 'Link to post: '
 
 reddit = praw.Reddit( # Enter the credentials for your bot here. Guide - https://i.imgur.com/7MpgEgL.png
