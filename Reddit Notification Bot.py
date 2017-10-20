@@ -20,26 +20,39 @@ MESSAGE_SUBJECT = 'Found new post'
 #The body of the message that the bot sends you. #The bot will automatically attach the link to the post at the end of the message body.
 MESSAGE_BODY = 'Link to post: '
 
-reddit = praw.Reddit( # Enter the credentials for your bot here. Guide - https://i.imgur.com/7MpgEgL.png
-    username = 'username', # The username of your bot
-    password = 'password', # The password to your bots account
-    client_id = 'client ID', # Your bots client ID
-    client_secret = 'client secret', # Your bots client secret
-    user_agent = 'Message Notification Bot, by /u/John_Yuki') # A short, unique description.
+try:
+    reddit = praw.Reddit( # Enter the credentials for your bot here. Guide - https://i.imgur.com/7MpgEgL.png
+        username = 'username', # The username of your bot
+        password = 'password', # The password to your bots account
+        client_id = 'client ID', # Your bots client ID
+        client_secret = 'client secret', # Your bots client secret
+        user_agent = 'Message Notification Bot, by /u/John_Yuki') # A short, unique description.
+except Exception as e:
+    print(e)
+    time.sleep(60)
 
 # Main program. Don't mess with anything below here unless you know what you're doing.
 def send_message(submission):
-    reddit.redditor(USERNAME).message(MESSAGE_SUBJECT, MESSAGE_BODY+submission.shortlink)
-    print('Sent new message') # This line is for testing purposes. If you don't want it, you can completely remove this line.
-
+    try:
+        reddit.redditor(USERNAME).message(MESSAGE_SUBJECT, MESSAGE_BODY+submission.shortlink)
+        print('Sent new message') # This line is for testing purposes. If you don't want it, you can completely remove this line.
+    except Exception as e:
+        print(e)
+        time.sleep(60)
+        
+        
 def find_submissions():
-    while True:
-        start_time = time.time()
-        for submission in reddit.subreddit(SUBREDDITS).stream.submissions():
-            for keyword in KEYWORDS:
-                if keyword.lower() in submission.title.lower() and submission.created_utc > start_time:
-                    send_message(submission, reddit)
-                    break
+    try:
+        while True:
+            start_time = time.time()
+            for submission in reddit.subreddit(SUBREDDITS).stream.submissions():
+                for keyword in KEYWORDS:
+                    if keyword.lower() in submission.title.lower() and submission.created_utc > start_time:
+                        send_message(submission, reddit)
+                        break
+    except Exception as e:
+        print(e)
+        time.sleep(60)
 
 if __name__ == '__main__':
     find_submissions()
