@@ -28,18 +28,18 @@ reddit = praw.Reddit( # Enter the credentials for your bot here. Guide - https:/
     user_agent = 'Message Notification Bot, by /u/John_Yuki') # A short, unique description.
 
 # Main program. Don't mess with anything below here unless you know what you're doing.
-def send_message(submission, reddit):
+def send_message(submission):
     reddit.redditor(USERNAME).message(MESSAGE_SUBJECT, MESSAGE_BODY+submission.shortlink)
     print('Sent new message') # This line is for testing purposes. If you don't want it, you can completely remove this line.
 
-def find_submissions(reddit):
+def find_submissions():
     while True:
         start_time = time.time()
         for submission in reddit.subreddit(SUBREDDITS).stream.submissions():
             for keyword in KEYWORDS:
-                if keyword in submission.title.lower() and submission.created_utc > start_time:
+                if keyword.lower() in submission.title.lower() and submission.created_utc > start_time:
                     send_message(submission, reddit)
                     break
 
 if __name__ == '__main__':
-    find_submissions(reddit)
+    find_submissions()
