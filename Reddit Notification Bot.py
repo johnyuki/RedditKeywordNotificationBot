@@ -27,6 +27,7 @@ def connect_to_reddit():
     client_id = 'client ID', # Your bots client ID
     client_secret = 'client secret', # Your bots client secret
     user_agent = 'Message Notification Bot, by /u/John_Yuki') # A short, unique description.
+    return reddit
 
 # Main program. Don't mess with anything below here unless you know what you're doing.
 def send_message(submission):
